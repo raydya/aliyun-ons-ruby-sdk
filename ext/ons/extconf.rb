@@ -36,7 +36,7 @@ dir_config('onsclient4cpp', HEADER_DIRS, LIB_DIRS)
 # configure link libraries
 abort 'libboost_chrono is missing, please install libboost_chrono' unless have_library('boost_chrono')
 abort 'libboost_system is missing, please install libboost_system' unless have_library('boost_system')
-abort 'libboost_thread is missing, please install libboost_thread' unless have_library('boost_thread')
+abort 'libboost_thread is missing, please install libboost_thread' unless (have_library('boost_thread') || have_library('boost_thread-mt') )
 abort unless have_library('onsclient4cpp')
 abort unless have_func('rb_thread_call_without_gvl', 'ruby/thread.h')
 
